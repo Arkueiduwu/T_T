@@ -28,6 +28,9 @@ project/assembly_name="ProyectoT"
 
 folder_colors={
 "res://assets/": "red",
+"res://assets/audio/": "green",
+"res://assets/audio/OST/": "green",
+"res://assets/audio/SFX/": "green",
 "res://scenes/": "purple",
 "res://scripts/": "yellow"
 }
