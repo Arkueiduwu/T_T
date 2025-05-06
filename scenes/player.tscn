@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://debuomwyr6eek"]
 
-[ext_resource type="Texture2D" uid="uid://cw4vftm45tw11" path="res://assets/TeseractianGenderlessSpriiteSheet.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://cw4vftm45tw11" path="res://assets/Images/TeseractianGenderlessSpriiteSheet.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cd7d3gn72gi40" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]

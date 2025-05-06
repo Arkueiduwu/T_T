@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw4vftm45tw11"
-path="res://.godot/imported/TeseractianGenderlessSpriiteSheet.png-173fe9ffc36b128ffd60c732ef4e42a0.ctex"
+uid="uid://bky08vhtswc0v"
+path="res://.godot/imported/icon.svg-a316e8a18aa8f5f3b535ad68fc30c2df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TeseractianGenderlessSpriiteSheet.png"
-dest_files=["res://.godot/imported/TeseractianGenderlessSpriiteSheet.png-173fe9ffc36b128ffd60c732ef4e42a0.ctex"]
+source_file="res://assets/Images/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-a316e8a18aa8f5f3b535ad68fc30c2df.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

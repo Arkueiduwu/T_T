@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oxf55shysyho"
-path="res://.godot/imported/Recyclot.png-003ca441b48fa8b463998ac2c599f678.ctex"
+uid="uid://cw4vftm45tw11"
+path="res://.godot/imported/TeseractianGenderlessSpriiteSheet.png-68451e782ddd19b13bd838ad47a20b7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Recyclot.png"
-dest_files=["res://.godot/imported/Recyclot.png-003ca441b48fa8b463998ac2c599f678.ctex"]
+source_file="res://assets/Images/TeseractianGenderlessSpriiteSheet.png"
+dest_files=["res://.godot/imported/TeseractianGenderlessSpriiteSheet.png-68451e782ddd19b13bd838ad47a20b7d.ctex"]
 
 [params]
 
