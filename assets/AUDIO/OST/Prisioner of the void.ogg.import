@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bapue7sgjlshy"
-path="res://.godot/imported/Prisioner of the void.ogg-309ecd21a070daac89df822140018da5.oggvorbisstr"
+path="res://.godot/imported/Prisioner of the void.ogg-e111d0a8010785a9e68a017d4b564cd7.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/AUDIO/OST/Prisioner of the void.ogg"
-dest_files=["res://.godot/imported/Prisioner of the void.ogg-309ecd21a070daac89df822140018da5.oggvorbisstr"]
+source_file="res://assets/Audio/OST/Prisioner of the void.ogg"
+dest_files=["res://.godot/imported/Prisioner of the void.ogg-e111d0a8010785a9e68a017d4b564cd7.oggvorbisstr"]
 
 [params]
 
