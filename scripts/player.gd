@@ -38,3 +38,9 @@ func play_animation():
 		MovementState.IDLE:
 			sprite_sheet.play("idleDown")
 			sprite_sheet.frame = 0
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		Main.startCombat()
+		

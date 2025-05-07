@@ -1,1 +1,1 @@
-extends CanvasLayer
+extends Control

@@ -1508,4 +1508,3 @@ tile_set = SubResource("TileSet_jyhfs")
 position = Vector2(389, 290)
 
 [node name="Combat" parent="." instance=ExtResource("6_tefeu")]
-visible = true

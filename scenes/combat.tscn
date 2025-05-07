@@ -5,11 +5,10 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5dyq"]
 size = Vector2(1920, 1080)
 
-[node name="Combat" type="CanvasLayer"]
-layer = 2
+[node name="Combat" type="Control"]
 visible = false
-offset = Vector2(-960, -540)
-transform = Transform2D(1, 0, 0, 1, -960, -540)
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_764e3")
 
 [node name="TextureRect" type="TextureRect" parent="."]

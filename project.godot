@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://dd4yt8602p154"
 config/icon="res://assets/Images/icon.svg"
 
+[autoload]
+
+Main="*res://scripts/main.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -39,6 +43,7 @@ folder_colors={
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 
