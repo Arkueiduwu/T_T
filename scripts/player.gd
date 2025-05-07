@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	play_animation()
 	
 func handleMovementInput(delta: float):
-	directional_input = Input.get_vector("left", "right", "up", "down")
+	directional_input = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if directional_input != Vector2.ZERO:
 		current_state = MovementState.WALKING
