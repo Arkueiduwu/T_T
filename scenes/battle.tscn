@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ek1lt24scp7i"]
+
+[ext_resource type="Script" uid="uid://dm8o561178gfn" path="res://scripts/battle.gd" id="1_764e3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5dyq"]
+size = Vector2(1920, 1080)
+
+[node name="Combat" type="CanvasLayer"]
+script = ExtResource("1_764e3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("PlaceholderTexture2D_c5dyq")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 845.0
+offset_right = 1896.0
+offset_bottom = 1019.0
+text = "uwu"

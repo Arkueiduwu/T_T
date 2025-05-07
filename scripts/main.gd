@@ -1,9 +1,4 @@
 extends Node2D
-@onready var combatScene: Control = $Combat
-
-func _physics_process(delta: float) -> void:
-	pass
-	
-func startCombat():
-	print(combatScene.is_visible_in_tree())
-	
+var playerLastValidPosition: Vector2 = Vector2.ZERO
+const TILE_SIZE: int = 32
+const GRID_OFFSET: Vector2 = Vector2(TILE_SIZE,TILE_SIZE)/2

@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
 var directional_input: Vector2 = Vector2.ZERO
 var speed: int = 300
 @onready var sprite_sheet: AnimatedSprite2D = $spriteSheet
+@onready var battleScene: CanvasLayer = $"../Combat"
 
 enum MovementState {IDLE, WALKING, RUNNING}
 var current_state = MovementState.IDLE
@@ -39,8 +39,8 @@ func play_animation():
 			sprite_sheet.play("idleDown")
 			sprite_sheet.frame = 0
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
-		Main.startCombat()
+		battleScene.startCombat()
+		
 		
