@@ -1,6 +1,10 @@
 extends CharacterBody2D
-var directional_input: Vector2 = Vector2.ZERO
+
 var speed: int = 300
+var hp: float = 10
+
+var directional_input: Vector2 = Vector2.ZERO
+
 @onready var spriteSheet: AnimatedSprite2D = $spriteSheet
 @onready var battleScene: CanvasLayer = $"../Combat"
 
