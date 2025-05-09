@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ek1lt24scp7i"]
+[gd_scene load_steps=6 format=3 uid="uid://ek1lt24scp7i"]
 
 [ext_resource type="Script" uid="uid://dm8o561178gfn" path="res://scripts/battle.gd" id="1_764e3"]
 [ext_resource type="PackedScene" uid="uid://bwoppl80jbkhr" path="res://scenes/battle_player.tscn" id="2_p1qf1"]
 [ext_resource type="PackedScene" uid="uid://dtosw4110dtwx" path="res://scenes/battle_enemy.tscn" id="3_a12nh"]
+[ext_resource type="AudioStream" uid="uid://b5qhudhghqskv" path="res://assets/Audio/OST/So we Fight.ogg" id="4_a12nh"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5dyq"]
 size = Vector2(1920, 1080)
@@ -48,6 +49,10 @@ offset_right = 1920.0
 offset_bottom = 1067.0
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_c5dyq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_a12nh")
+autoplay = true
 
 [connection signal="tree_exited" from="participants/battleEnemy" to="." method="_on_battle_enemy_tree_exited"]
 [connection signal="tree_exited" from="participants/battleEnemy2" to="." method="_on_battle_enemy_tree_exited"]

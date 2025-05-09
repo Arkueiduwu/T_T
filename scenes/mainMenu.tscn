@@ -17,10 +17,10 @@ script = ExtResource("1_qkhwq")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 539.0
-offset_top = 342.0
-offset_right = 1421.0
-offset_bottom = 674.0
+offset_left = 688.0
+offset_top = 227.0
+offset_right = 1281.0
+offset_bottom = 337.0
 theme = SubResource("Theme_3d1i7")
 text = "START!!!!!¿¿¿¿!?!?!?"
 
