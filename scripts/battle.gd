@@ -1,16 +1,15 @@
-extends CanvasLayer
+extends Node2D
+var battle: bool = false
+var previousScene: String = "res://scenes/Overworld.tscn"
+var roundOrder = {}
 
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("debug1"):
-		exitCombat()
-		
-func startCombat():
-	visible = true
-	get_tree().current_scene.process_mode = Node.PROCESS_MODE_DISABLED
-	
-	
+
 func exitCombat():
-	visible = false
-	get_tree().current_scene.process_mode = Node.PROCESS_MODE_INHERIT
+	get_tree().change_scene_to_file(previousScene)
 	
+func _physics_process(delta: float) -> void:
+	if battle:
+		print(battle)
 	
+func _on_attack_pressed() -> void:
+	exitCombat()

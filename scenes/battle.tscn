@@ -1,29 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://ek1lt24scp7i"]
+[gd_scene load_steps=9 format=3 uid="uid://ek1lt24scp7i"]
 
 [ext_resource type="Script" uid="uid://dm8o561178gfn" path="res://scripts/battle.gd" id="1_764e3"]
+[ext_resource type="Script" uid="uid://cft07ufeafcm4" path="res://scenes/battle_enemy.gd" id="2_p1qf1"]
+[ext_resource type="Texture2D" uid="uid://oxf55shysyho" path="res://assets/Images/Recyclot.png" id="2_th188"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("2_th188")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("2_th188")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_th188")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1qf1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5dyq"]
 size = Vector2(1920, 1080)
 
-[node name="Combat" type="CanvasLayer"]
+[node name="Battle" type="Node2D"]
 script = ExtResource("1_764e3")
 
-[node name="Control" type="Control" parent="."]
+[node name="HUD" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = SubResource("PlaceholderTexture2D_c5dyq")
-
-[node name="Button" type="Button" parent="Control"]
+[node name="attack" type="Button" parent="HUD"]
+z_index = 1
 layout_mode = 0
 offset_left = 1366.0
 offset_top = 845.0
 offset_right = 1896.0
 offset_bottom = 1019.0
-text = "uwu"
+text = "Attack"
+
+[node name="battleEnemy" type="Node2D" parent="HUD"]
+position = Vector2(980, 232)
+scale = Vector2(5, 5)
+script = ExtResource("2_p1qf1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUD/battleEnemy"]
+sprite_frames = SubResource("SpriteFrames_p1qf1")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+z_index = -1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 1923.0
+offset_bottom = 1085.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_c5dyq")
+
+[connection signal="pressed" from="HUD/attack" to="." method="_on_attack_pressed"]

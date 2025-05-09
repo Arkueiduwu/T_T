@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProyectoT"
-run/main_scene="uid://btgdkwshdmum5"
+run/main_scene="uid://djuja4ado277h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://dd4yt8602p154"
 config/icon="res://assets/Images/icon.svg"
