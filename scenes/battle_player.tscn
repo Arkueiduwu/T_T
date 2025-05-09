@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwoppl80jbkhr"]
+
+[ext_resource type="Script" uid="uid://dy0q1t0p178t3" path="res://scripts/battle_player.gd" id="1_omjo4"]
+[ext_resource type="Texture2D" uid="uid://dd4yt8602p154" path="res://assets/Images/si (2).png" id="2_hugls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpir7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hugls")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omjo4"]
+size = Vector2(50, 50)
+
+[node name="battlePlayer" type="Node2D"]
+script = ExtResource("1_omjo4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.331847, 0.361801)
+sprite_frames = SubResource("SpriteFrames_lpir7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_omjo4")

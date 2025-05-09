@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djuja4ado277h"]
 
-[ext_resource type="Script" uid="uid://cbvi4rsjwya8" path="res://control.gd" id="1_qkhwq"]
+[ext_resource type="Script" uid="uid://cbvi4rsjwya8" path="res://scripts/control.gd" id="1_qkhwq"]
 
 [sub_resource type="Theme" id="Theme_3d1i7"]
 default_font_size = 70

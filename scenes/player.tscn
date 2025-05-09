@@ -360,7 +360,7 @@ size = Vector2(20, 21)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(40, 40)
 
-[node name="player" type="CharacterBody2D" groups=["player"]]
+[node name="player" type="CharacterBody2D" groups=["ally", "player"]]
 script = ExtResource("1_g2els")
 
 [node name="spriteSheet" type="AnimatedSprite2D" parent="."]

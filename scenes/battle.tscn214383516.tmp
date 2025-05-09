@@ -13,13 +13,9 @@ script = ExtResource("1_764e3")
 [node name="participants" type="Node2D" parent="."]
 
 [node name="battlePlayer" parent="participants" groups=["ally", "player"] instance=ExtResource("2_p1qf1")]
-position = Vector2(679, 902)
 
 [node name="battleEnemy" parent="participants" groups=["enemy"] instance=ExtResource("3_a12nh")]
-position = Vector2(1572, 238)
-
-[node name="battleEnemy2" parent="participants" groups=["enemy"] instance=ExtResource("3_a12nh")]
-position = Vector2(641, 261)
+position = Vector2(980, 232)
 
 [node name="UI" type="Control" parent="."]
 z_index = 10
@@ -43,12 +39,11 @@ text = "Attack"
 z_index = -1
 z_as_relative = false
 layout_mode = 0
-offset_top = -13.0
-offset_right = 1920.0
-offset_bottom = 1067.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 1923.0
+offset_bottom = 1085.0
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_c5dyq")
 
-[connection signal="tree_exited" from="participants/battleEnemy" to="." method="_on_battle_enemy_tree_exited"]
-[connection signal="tree_exited" from="participants/battleEnemy2" to="." method="_on_battle_enemy_tree_exited"]
-[connection signal="pressed" from="UI/attack" to="participants/battlePlayer" method="_on_attack_pressed"]
+[connection signal="pressed" from="UI/attack" to="." method="_on_attack_pressed"]
