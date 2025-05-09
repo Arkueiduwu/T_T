@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://djuja4ado277h"]
+[gd_scene load_steps=4 format=3 uid="uid://djuja4ado277h"]
 
 [ext_resource type="Script" uid="uid://cbvi4rsjwya8" path="res://scripts/control.gd" id="1_qkhwq"]
+[ext_resource type="AudioStream" uid="uid://dsdpohej7w5l" path="res://assets/Audio/OST/toby fox - UNDERTALE Soundtrack - 02 Start Menu.ogg" id="2_3d1i7"]
 
 [sub_resource type="Theme" id="Theme_3d1i7"]
 default_font_size = 70
@@ -22,5 +23,9 @@ offset_right = 1421.0
 offset_bottom = 674.0
 theme = SubResource("Theme_3d1i7")
 text = "START!!!!!¿¿¿¿!?!?!?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3d1i7")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

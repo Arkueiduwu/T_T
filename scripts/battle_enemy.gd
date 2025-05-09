@@ -1,8 +1,8 @@
 extends Node2D
-var HP: float = 10
-var STRENGTH: float = 10
-var AP: int = 3
-var maxAP: int = 3
+var HP: float = 10.0
+var AP: int = 2
+var AD: float = 10.0
+const MAX_AP: int = 3
 var selectedCommand: int = 0
 
 func _physics_process(delta: float) -> void:
