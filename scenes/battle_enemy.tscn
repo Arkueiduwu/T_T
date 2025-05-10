@@ -52,3 +52,10 @@ shape = SubResource("RectangleShape2D_bvk4b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bvk4b")
+
+[node name="psBar" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = -82.6
+offset_top = 11.2
+offset_right = 76.4
+offset_bottom = 38.2

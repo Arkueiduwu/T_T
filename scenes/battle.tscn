@@ -52,14 +52,6 @@ offset_bottom = 1067.0
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_c5dyq")
 
-[node name="ProgressBar" type="ProgressBar" parent="UI"]
-z_index = 1
-layout_mode = 0
-offset_left = 200.0
-offset_top = 662.0
-offset_right = 1194.0
-offset_bottom = 781.0
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_a12nh")
 autoplay = true

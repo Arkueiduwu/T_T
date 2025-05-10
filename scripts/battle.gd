@@ -59,7 +59,7 @@ func advanceTurn() -> void:
 		currentActor = turnOrder[currentTurnIndex]
 		
 		# Skip if actor is invalid or dead
-		if is_instance_valid(currentActor) and currentActor.stats["HP"]["value"] > 0:
+		if is_instance_valid(currentActor) and currentActor.stats["PS"]["value"] > 0:
 			break
 		
 		attempts += 1
@@ -76,7 +76,7 @@ func advanceTurn() -> void:
 func cleanupDeadActors() -> void:
 	# Remove invalid or dead actors
 	for i in range(turnOrder.size() - 1, -1, -1):
-		if not is_instance_valid(turnOrder[i]) or turnOrder[i].stats["HP"]["value"] <= 0:
+		if not is_instance_valid(turnOrder[i]) or turnOrder[i].stats["PS"]["value"] <= 0:
 			# Adjust current index if we're removing someone before it
 			if i < currentTurnIndex:
 				currentTurnIndex -= 1
@@ -85,7 +85,7 @@ func cleanupDeadActors() -> void:
 func countEnemies() -> int:
 	var count = 0
 	for actor in turnOrder:
-		if is_instance_valid(actor) and actor.is_in_group("enemy") and actor.stats["HP"]["value"] > 0:
+		if is_instance_valid(actor) and actor.is_in_group("enemy") and actor.stats["PS"]["value"] > 0:
 			count += 1
 	return count
 

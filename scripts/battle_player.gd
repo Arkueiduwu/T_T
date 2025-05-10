@@ -1,9 +1,10 @@
 extends Node2D
 
 @onready var battleNode: Node2D = $"../.."
+@onready var psBar: ProgressBar = $psBar
 
 @export var stats: Dictionary = {
-	"HP": {"value": 10.0, "min": 0.0, "max": 10.0, "type": "float"},
+	"PS": {"value": 10.0, "min": 0.0, "max": 10.0, "type": "float"},
 	"AP": {"value": 1, "min": 0, "max": 1, "type": "int"},
 	"AD": {"value": 5.0, "min": 0.0, "max": INF, "type": "float"}
 }
@@ -11,8 +12,13 @@ extends Node2D
 var currentTarget: Node2D = null
 var current_action: String = ""
 
+func _ready() -> void:
+	psBar.min_value = stats["PS"]["min"]
+	psBar.max_value = stats["PS"]["max"]
+	psBar.value = stats["PS"]["value"]
+
 func _physics_process(_delta: float) -> void:
-	if stats["HP"]["value"] <= 0:
+	if stats["PS"]["value"] <= 0:
 		queue_free()
 	if current_action and Input.is_action_just_pressed("select"):
 		currentTarget = get_target_under_mouse()
@@ -26,11 +32,11 @@ func execute_action() -> void:
 	
 	match current_action:
 		"attack":
-			changeStat(currentTarget, "HP", -stats["AD"]["value"])
+			changeStat(currentTarget, "PS", -stats["AD"]["value"])
 			print("Dealt ", stats["AD"]["value"], " damage to ", currentTarget.name)
 		"heal":
-			currentTarget.HP += 5
-			print("Healed ", currentTarget.name, " for 5 HP")
+			currentTarget.PS += 5
+			print("Healed ", currentTarget.name, " for 5 PS")
 		"item":
 			print("Used item on ", currentTarget.name)
 	
@@ -71,6 +77,8 @@ func changeStat(target: Node2D, stat: String, amount: float) -> void:
 				stat_config.min,
 				stat_config.max
 			)
+	if stat == "PS":
+		target.psBar.value = target.stats[stat]["value"]
 	var amountToString: String = "%.0f" % amount
 	battleNode.showlabel(target.position, amountToString)
 	

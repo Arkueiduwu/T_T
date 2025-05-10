@@ -28,3 +28,10 @@ sprite_frames = SubResource("SpriteFrames_lpir7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_omjo4")
+
+[node name="psBar" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = -168.0
+offset_top = -174.0
+offset_right = 174.0
+offset_bottom = -128.0
