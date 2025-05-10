@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkaxrc1h7u5eb"]
+
+[ext_resource type="Script" uid="uid://b81svqxi3167v" path="res://scripts/label.gd" id="1_2uqk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2uqk7"]
+font_size = 64
+
+[node name="Control" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_2uqk7")
+script = ExtResource("1_2uqk7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

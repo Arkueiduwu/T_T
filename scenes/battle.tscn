@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ek1lt24scp7i"]
+[gd_scene load_steps=7 format=3 uid="uid://ek1lt24scp7i"]
 
 [ext_resource type="Script" uid="uid://dm8o561178gfn" path="res://scripts/battle.gd" id="1_764e3"]
 [ext_resource type="PackedScene" uid="uid://bwoppl80jbkhr" path="res://scenes/battle_player.tscn" id="2_p1qf1"]
 [ext_resource type="PackedScene" uid="uid://dtosw4110dtwx" path="res://scenes/battle_enemy.tscn" id="3_a12nh"]
 [ext_resource type="AudioStream" uid="uid://b5qhudhghqskv" path="res://assets/Audio/OST/So we Fight.ogg" id="4_a12nh"]
+[ext_resource type="Script" uid="uid://c4ve81jd153mf" path="res://scenes/ui.gd" id="4_lpir7"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c5dyq"]
 size = Vector2(1920, 1080)
@@ -29,6 +30,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_lpir7")
 
 [node name="attack" type="Button" parent="UI"]
 z_index = 1
@@ -49,6 +51,14 @@ offset_right = 1920.0
 offset_bottom = 1067.0
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_c5dyq")
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+z_index = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 662.0
+offset_right = 1194.0
+offset_bottom = 781.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_a12nh")

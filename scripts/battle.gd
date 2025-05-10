@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var label: PackedScene = load("res://scenes/label.tscn")
 ### References ###
 @onready var participants: Node2D = $participants
 
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	checkBattleConditions()
 	
-	if currentActor.AP <= 0:
+	if currentActor.stats["AP"]["value"] <= 0:
 		advanceTurn()
 
 func initializeBattle() -> void:
@@ -58,7 +59,7 @@ func advanceTurn() -> void:
 		currentActor = turnOrder[currentTurnIndex]
 		
 		# Skip if actor is invalid or dead
-		if is_instance_valid(currentActor) and currentActor.HP > 0:
+		if is_instance_valid(currentActor) and currentActor.stats["HP"]["value"] > 0:
 			break
 		
 		attempts += 1
@@ -69,13 +70,13 @@ func advanceTurn() -> void:
 		return
 	
 	# Refresh AP for new turn
-	currentActor.AP = currentActor.MAX_AP
+	currentActor.stats["AP"]["value"] = currentActor.stats["AP"]["max"]
 	remainingEnemies = countEnemies()
 
 func cleanupDeadActors() -> void:
 	# Remove invalid or dead actors
 	for i in range(turnOrder.size() - 1, -1, -1):
-		if not is_instance_valid(turnOrder[i]) or turnOrder[i].HP <= 0:
+		if not is_instance_valid(turnOrder[i]) or turnOrder[i].stats["HP"]["value"] <= 0:
 			# Adjust current index if we're removing someone before it
 			if i < currentTurnIndex:
 				currentTurnIndex -= 1
@@ -84,7 +85,7 @@ func cleanupDeadActors() -> void:
 func countEnemies() -> int:
 	var count = 0
 	for actor in turnOrder:
-		if is_instance_valid(actor) and actor.is_in_group("enemy") and actor.HP > 0:
+		if is_instance_valid(actor) and actor.is_in_group("enemy") and actor.stats["HP"]["value"] > 0:
 			count += 1
 	return count
 
@@ -97,5 +98,8 @@ func _input(event: InputEvent) -> void:
 		battleVictory = true
 		isBattling = false
 
-func _on_battle_enemy_tree_exited() -> void:
-	pass
+func showlabel(targetPosition: Vector2, message: String):
+	var labelInstance = label.instantiate()
+	labelInstance.text = message
+	labelInstance.position = targetPosition
+	add_child(labelInstance)
